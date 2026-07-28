@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "author": "ChatGPT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -180,
+      "left": 280
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "speed",
+      "top": 220,
+      "left": -250
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "fuel",
+      "top": 320,
+      "left": -250
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "temp",
+      "top": 420,
+      "left": -250
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo",
+      "top": 270,
+      "left": 300
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz",
+      "top": 320,
+      "left": 470
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 200,
+      "left": 470,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 250,
+      "left": 470,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 300,
+      "left": 470,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 200,
+      "left": 520,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 250,
+      "left": 520,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 300,
+      "left": 520,
+      "attrs": { "value": "220" }
+    }
+  ],
+
+  "connections": [
+
+    ["speed:SIG","uno:A0","green"],
+    ["speed:VCC","uno:5V","red"],
+    ["speed:GND","uno:GND","black"],
+
+    ["fuel:SIG","uno:A1","green"],
+    ["fuel:VCC","uno:5V","red"],
+    ["fuel:GND","uno:GND","black"],
+
+    ["temp:SIG","uno:A2","green"],
+    ["temp:VCC","uno:5V","red"],
+    ["temp:GND","uno:GND","black"],
+
+    ["servo:PWM","uno:6","orange"],
+    ["servo:V+","uno:5V","red"],
+    ["servo:GND","uno:GND","black"],
+
+    ["buzz:1","uno:7","blue"],
+    ["buzz:2","uno:GND","black"],
+
+    ["led1:A","uno:8","green"],
+    ["led1:C","r1:1","black"],
+    ["r1:2","uno:GND","black"],
+
+    ["led2:A","uno:9","green"],
+    ["led2:C","r2:1","black"],
+    ["r2:2","uno:GND","black"],
+
+    ["led3:A","uno:10","green"],
+    ["led3:C","r3:1","black"],
+    ["r3:2","uno:GND","black"],
+
+    ["lcd:RS","uno:12","blue"],
+    ["lcd:E","uno:11","blue"],
+    ["lcd:D4","uno:5","blue"],
+    ["lcd:D5","uno:4","blue"],
+    ["lcd:D6","uno:3","blue"],
+    ["lcd:D7","uno:2","blue"],
+
+    ["lcd:VSS","uno:GND","black"],
+    ["lcd:VDD","uno:5V","red"],
+    ["lcd:RW","uno:GND","black"],
+    ["lcd:A","uno:5V","red"],
+    ["lcd:K","uno:GND","black"]
+  ]
+}
